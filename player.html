@@ -18,23 +18,24 @@
         <div class="container">
             <div class="player">
                 <div class="player__controls">
-                    <button class="player__btn player__btn--small">
+                    <div class="player__btn player__btn--small">
                         <i class="icon icon-player"></i>
-                    </button>
+                    </div>
 
                     <h5 class="player__title">Reproductor</h5>
 
-                    <button class="player__btn player__btn--small">
+                    <div class="player__btn player__btn--small">
                         <i class="icon icon-menu"></i>
-                    </button>
+                    </div>
+
                 </div>
 
                 <div class="player__album">
                     <img src="" alt="Album cover" class="player__img" />
                 </div>
 
-                <h2 class="player__artist">Name artist</h2>
-                <h3 class="player__song">Name song</h3>
+                <h2 class="player__song">Name song</h2>
+                <h3 class="player__artist">Name artist</h3>
 
                 <input type="range" value="20" min="0" class="player__level">
 
@@ -48,18 +49,20 @@
                 </audio>
 
                 <div class="player__controls">
-                    <button class="player__btn player__btn--medium" id="backward">
-                        <i class="icon icon-backward"></i>
-                    </button>
 
-                    <button class="player__btn player__btn--medium color__btn" id="play">
+                    <div class="player__btn player__btn--medium" id="backward">
+                        <i class="icon icon-backward"></i>
+                    </div>
+
+                    <div class="player__btn player__btn--medium color__btn" id="play">
                         <i class="icon icon-play"></i>
                         <i class="icon icon-pause hide__btn"></i>
-                    </button>
+                    </div>
 
-                    <button class="player__btn player__btn--medium" id="forward">
+                    <div class="player__btn player__btn--medium" id="forward">
                         <i class="icon icon-forward"></i>
-                    </button>
+                    </div>
+
                 </div>
             </div>
         </div>
