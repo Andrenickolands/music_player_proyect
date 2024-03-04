@@ -1,5 +1,3 @@
-@import url();
-
 :root {
     --background: #E0E5EC;
     --gray: #797d7f;
@@ -117,7 +115,7 @@ img {
     height: 6px;
     border-radius: 3px;
 }
-.player__level::-webkit-slider-thumb{
+.player__level ::-webkit-slider-thumb{
     -webkit-appearance: none;
     border-radius: 100%;
     background-color: #5c87fe;
