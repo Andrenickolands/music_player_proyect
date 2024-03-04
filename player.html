@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>music player</title>
+</head>
+
+<body>
+        <div class="container">
+            <div class="player">
+                <div class="player__controls">
+                    <button class="player__btn player__btn--small">
+                        <i class="icon icon-player"></i>
+                    </button>
+
+                    <h5 class="player__title">Reproductor</h5>
+
+                    <button class="player__btn player__btn--small">
+                        <i class="icon icon-menu"></i>
+                    </button>
+                </div>
+
+                <div class="player__album">
+                    <img src="" alt="Album cover" class="player__img" />
+                </div>
+
+                <h2 class="player__artist">Name artist</h2>
+                <h3 class="player__song">Name song</h3>
+
+                <input type="range" value="20" min="0" class="player__level">
+
+                <div class="song-time">
+                    <div class="start">00:01</div>
+                    <div class="finish">00:00</div>
+                </div>
+
+                <audio class="player__audio" controls id="audio">
+                    <source src="api" type="audio/mpeg">
+                </audio>
+
+                <div class="player__controls">
+                    <button class="player__btn player__btn--medium" id="backward">
+                        <i class="icon icon-backward"></i>
+                    </button>
+
+                    <button class="player__btn player__btn--medium color__btn" id="play">
+                        <i class="icon icon-play"></i>
+                        <i class="icon icon-pause hide__btn"></i>
+                    </button>
+
+                    <button class="player__btn player__btn--medium" id="forward">
+                        <i class="icon icon-forward"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="javaScript.js"></script>
+</body>
+
+</html>
