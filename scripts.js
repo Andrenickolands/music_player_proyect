@@ -1,7 +1,14 @@
 
 
     const music = document.getElementById("music");
-    const playPause = document.getElementById("play");
+
+    const back = document.getElementById("back");
+    const search = document.getElementById("search");
+    const menu = document.getElementById("menu");
+
+    const playPause = document.getElementById("backward");
+    const playBackward= document.getElementById("play");
+    const playForward= document.getElementById("forward");
 
     //playPause.addEventListener("click", () {
     //    if(music.paused || music.ended) {
