@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b4ef05319a.js" crossorigin="anonymous"></script>
-    <script src="javaScript.js"></script>
+    <script src="scripts.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,57 +26,67 @@
             <h5 class="player__title">Reproductor</h5>
 
             <div class="player__controls">
-                <div class="player__btn player__btn--small">
-                    <i class="fa-solid fa-arrow-left color-icon"></i>
+                <div class="player__btn player__btn--small" id="back" onclick="audio.play();">
+                    <i class="fa-solid fa-arrow-left back-btn color-icon"></i>
                 </div>
 
-                <div class="player__input" id="search">
-                    <i class="fa-solid fa-magnifying-glass color-icon"></i>
+                <div class="player__input" id="search" onclick="audio__input.play();">
+                    <i class="fa-solid fa-magnifying-glass search-btn color-icon"></i>
                     <input type="search" name="text" class="input_search" placeholder="Buscar">
                 </div>
 
-                <div class="player__btn player__btn--small">
-                    <i class="fa-solid fa-ellipsis color-icon"></i>
+                <div class="player__btn player__btn--small" onclick="audio.play();">
+                    <i class="fa-solid fa-ellipsis menu-btn color-icon"></i>
                 </div>
-
             </div>
 
             <div class="player__album">
                 <img src="" alt="Album cover" class="player__img" />
             </div>
 
-            <h2 class="player__song">Name song</h2>
-            <h3 class="player__artist">Name artist</h3>
+            <h2 class="player__song">var(Name song)</h2>
+            <h3 class="player__artist">var(Name artist)</h3>
 
             <input type="range" value="20" min="0" class="player__level">
 
             <div class="song-time">
                 <div class="start">00:01</div>
-                <div class="finish">00:00</div>
+                <div class="finish">var(time__finish)</div>
             </div>
 
-            <audio class="player__audio" controls id="audio">
+            <audio class="player__audio" controls id="music">
                 <source src="api" type="audio/mpeg">
             </audio>
 
             <div class="player__controls">
 
-                <div class="player__btn player__btn--medium" id="backward">
-                    <i class="fa-solid fa-backward color-icon"></i>
+                <div class="player__btn player__btn--medium" id="backward" onclick="audio.play()">
+                    <i class="fa-solid fa-backward backward-btn color-icon"></i>
                 </div>
 
-                <div class="player__btn player__btn--medium color__btn" id="play">
-                    <i class="fa-solid fa-play"></i>
-                    <i class="fa-solid fa-pause hide__btn"></i>
+                <div class="player__btn player__btn--medium color__btn" id="play" onclick="audio__play.play()">
+                    <i class="fa-solid fa-play play-btn"></i>
+                    <i class="fa-solid fa-pause pause-btn hide__btn"></i>
                 </div>
 
-                <div class="player__btn player__btn--medium" id="forward">
-                    <i class="fa-solid fa-forward color-icon"></i>
+                <div class="player__btn player__btn--medium" id="forward" onclick="audio.play()">
+                    <i class="fa-solid fa-forward forward-btn color-icon"></i>
                 </div>
 
             </div>
         </div>
     </div>
+
+    <script>
+        const audio__input = new Audio();
+        audio__input.src = "assets/audio/click__input.mp3";
+
+        const audio__play = new Audio();
+        audio__play.src = "assets/audio/click__play.mp3";
+
+        const audio = new Audio();
+        audio.src = "assets/audio/click.mp3";
+    </script>
 
 </body>
 
