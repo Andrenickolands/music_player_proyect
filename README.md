@@ -9,8 +9,6 @@ Descripción: Reproductor de música
 Autores:
 
 Nicolás Sepúlveda (https://github.com/Andrenickolands/)
-David Vera (https://github.com/DaveTTo98)
-Paula Ramirez (https://github.com/Paulandreaa)
 ...
 
 Fecha de creación: 3/03/2024
