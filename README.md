@@ -37,7 +37,7 @@ Ejecutar el proyecto.
 
 Instrucciones de uso:
 
-Este es un proyecto que sirve como
+Este es un proyecto que sirve como muestra de habilidades en desarrollo web, interfaces de usuario y estructuración de un proyecto con documentación
 
 Ejemplo de uso:
 
