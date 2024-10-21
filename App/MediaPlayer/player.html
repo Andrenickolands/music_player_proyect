@@ -17,7 +17,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 
     <title>music player</title>
 </head>
@@ -99,7 +99,7 @@
 
                 <input id="myRange" class="player__level" value="10" max="100" min="0" type="range">
 
-                <audio class="player__audio" controls id="music">
+                <audio controls id="music" class="player__audio">
                     <source src="var(song)" type="audio/mpeg">
                 </audio>
             </div>
@@ -125,13 +125,13 @@
 
     <script>
         const audio__input = new Audio();
-        audio__input.src = "assets/audio/click__input.mp3";
+        audio__input.src = "../../assets/audio/click__input.mp3";
 
         const audio__play = new Audio();
-        audio__play.src = "assets/audio/click__play.mp3";
+        audio__play.src = "../../assets/audio/click__play.mp3";
 
         const audio = new Audio();
-        audio.src = "assets/audio/click.mp3";
+        audio.src = "../../assets/audio/click.mp3";
     </script>
 
 </body>
