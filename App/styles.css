@@ -477,10 +477,10 @@ img {
     align-items: flex-start;
     justify-content: center;
 
-    margin-top: 34rem;
+    margin-top: 35rem;
 
     width: 100%;
-    height: 8rem;
+    height: 5rem;
     border-radius: 18px;
 
     filter: blur(0.5px);
@@ -502,11 +502,6 @@ img {
     border-top-right-radius: 18px;
 
     background-color: transparent;
-}
-
-.player__title-options {
-    margin-top: 3rem;
-    margin-bottom: 1.4rem;
 }
 
 .menu-options {
@@ -540,3 +535,38 @@ img {
 .world-position {
 
 }
+
+.player__title-options {
+    margin-top: 3rem;
+    margin-bottom: 1.4rem;
+}
+
+.container-tarjets { 
+    display: grid;
+    align-items: center;
+}
+
+.tarjet {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: left;
+
+    filter: blur(0.5px);
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.tarjet__img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.4rem;
+    filter: blur(0.5px);
+}
+
+/*||||||||||||||||||||||||||||||||||||||| Albums ||||||||||||||||||||||||||||||*/
+
+/*||||||||||||||||||||||||||||||||||||||| List ||||||||||||||||||||||||||||||||*/
