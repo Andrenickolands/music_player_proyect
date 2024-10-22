@@ -20,10 +20,10 @@
 
 <body>
     <div class="container">
-        <div class="player">
+        <div class="fondo">
             <h1 class="player__title">EXPLORAR</h1>
 
-            <div class="player__controls">
+            <div class="player__controls-explore">
                 <div class="player__btn player__btn--small" id="back" onclick="audio.play();">
                     <i class="fa-solid fa-arrow-left back-btn color-icon"></i>
                 </div>
@@ -32,19 +32,24 @@
                     <i class="fa-solid fa-magnifying-glass search-btn color-icon"></i>
                     <input type="search" name="text" class="input_search" placeholder="Buscar">
                 </div>
+
+                <div class="player__btn player__btn--small" id="menuExplore" onclick="audio.play();">
+                    <i class="fa-solid fa-ellipsis menu-btn color-icon"></i>
+                </div>
             </div>
 
-            <div>
+            <div class="world">
 
             </div>
 
-            <div>
-                <div>
-                
+            <div class="desplegable">
+                <div class="deslizador">
+                    <svg width="64" height="4" viewBox="0 0 64 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 2L62 1.99999" stroke="#A1A3A6" stroke-width="4" stroke-linecap="round" />
+                    </svg>
                 </div>
 
-                <h1 class="player__title">TOP MUSIC</h1>
-                
+                <h1 class="player__title-options">TOP MUSIC</h1> 
             </div>
         </div>
     </div>
