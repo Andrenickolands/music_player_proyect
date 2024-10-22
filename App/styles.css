@@ -97,6 +97,8 @@ img {
     max-width: 100%;
 }
 
+/*||||||||||||||||||||||||||||||||||||||| player ||||||||||||||||||||||||||||||||*/
+
 /* Centra la parte externa */
 
 .container {
@@ -109,11 +111,11 @@ img {
 
 /* Centra la parte interna */
 
-.player {
+.fondo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 26rem;
     height: 42rem;
     background-color: var(--background);
@@ -123,7 +125,7 @@ img {
 
 /* Titulo */
 .player__title {
-    margin-top: 4rem;
+    margin-top: 1.6rem;
     margin-bottom: 1.4rem;
 }
 
@@ -178,6 +180,28 @@ img {
 .input_search:focus {
     outline-color: #e8e8e8;
     background: var(--background);
+
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.input_search-selected {
+    width: 100%;
+    height: 2.8rem;
+
+    font-size: 16px;
+    letter-spacing: 0.06rem;
+    font-style: medium;
+    color: var(--text);
+
+    line-height: 28px;
+    padding: 0.8rem;
+    padding-left: 3rem;
+    outline: none;
+    outline-color: #e8e8e8;
+    background: var(--background);
+    border: none;
+    border-radius: 1rem;
 
     transition: 0.3s;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
@@ -243,7 +267,7 @@ img {
     align-items: center;
 }
 
-/* ////////// icono ///////// */
+/* ////////// icono heart ///////// */
 .heart-container {
     width: 100%;
     width: 28px;
@@ -436,6 +460,57 @@ img {
     display: none;
 }
 
+/* ////////////////////////// iconos //////////////////////////// */
+
 .color-icon {
     color: #5c5c5c
 }
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+/*||||||||||||||||||||||||||||||||||||||| options ||||||||||||||||||||||||||||||||*/
+
+.container-options {
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Centra la parte interna */
+
+.fondo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 26rem;
+    height: 42rem;
+    background-color: var(--background);
+    border-radius: 18px;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9PX -9PX 16px rgba(255, 255, 255, 0.5);
+}
+
+.deslizador {
+
+}
+
+.menu-options {
+
+}
+
+.item-options {
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*||||||||||||||||||||||||||||||||||||||| search |||||||||||||||||||||||||||||||||*/
+
+.position {
+   margin-top: 40%;
+}
+
