@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +17,49 @@
     <script src="scripts.js"></script>
     <title>Album</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="fondo fondoDesign">
+
+            <h1 class="player__title">ÁLBUMES</h1>
+
+            <div class="player__controls">
+                <div class="player__btn player__btn--small" id="back" onclick="audio.play();">
+                    <i class="fa-solid fa-arrow-left back-btn color-icon"></i>
+                </div>
+
+                <div class="player__input" id="search" onclick="audio__input.play();">
+                    <i class="fa-solid fa-magnifying-glass search-btn color-icon"></i>
+                    <input type="search" name="text" class="input_search" placeholder="Buscar">
+                </div>
+
+                <div class="player__btn player__btn--small" id="menu" onclick="audio.play();">
+                    <i class="fa-regular fa-map menu-btn color-icon"></i>
+                </div>
+            </div>
+
+            <div class="container-albums">
+                <div class="list-album">
+                    <div class="Container-favs">
+                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 15L6.83985 13.9371C2.71992 10.0954 0 7.60195 0 4.4959C0 1.96176 1.91992 0 4.4 0C5.79996 0 7.11988 0.653984 8 1.71668C8.88008 0.653984 10.2 0 11.6 0C14.0801 0 16 1.96176 16 4.4959C16 7.60199 13.28 10.0954 9.16015 13.9371L8 15Z" fill="#D2D7FA"/>
+                        </svg>
+                    </div>
+                    <h3>Tus me gusta</h3>
+                    <h6>Playlist - 1693 canciones</h6>
+                </div>
+                <div class="list-album">
+                    <img src="../../assets/img/Portada_nirvana.jpg" alt="Album cover" />
+                    <h3>Rock music</h3>
+                    <h6>Playlist - 1200 canciones</h6>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
     <script>
         const audio__input = new Audio();
         audio__input.src = "../../assets/audio/click__input.mp3";
@@ -29,4 +71,5 @@
         audio.src = "../../assets/audio/click.mp3";
     </script>
 </body>
+
 </html>

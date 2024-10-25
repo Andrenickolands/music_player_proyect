@@ -17,6 +17,28 @@
     <title>list</title>
 </head>
 <body>
+    <div class="container">
+        <div class="fondo fondoDesign">
+
+            <h1 class="player__title">lISTA</h1>
+
+            <div class="player__controls">
+                <div class="player__btn player__btn--small" id="back" onclick="audio.play();">
+                    <i class="fa-solid fa-arrow-left back-btn color-icon"></i>
+                </div>
+
+                <div class="player__input" id="search" onclick="audio__input.play();">
+                    <i class="fa-solid fa-magnifying-glass search-btn color-icon"></i>
+                    <input type="search" name="text" class="input_search" placeholder="Buscar">
+                </div>
+
+                <div class="player__btn player__btn--small" id="menu" onclick="audio.play();">
+                    <i class="fa-regular fa-map menu-btn color-icon"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
     
     <script>
         const audio__input = new Audio();
