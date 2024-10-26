@@ -41,7 +41,7 @@ h3 {
     font-size: 14px;
     letter-spacing: 0.06rem;
     font-style: medium;
-    color: #454545;
+    color: var(--text);
 }
 
 /* Texto terciario */
@@ -67,7 +67,7 @@ h6 {
     font-size: 12px;
     letter-spacing: 0.06rem;
     font-style: medium;
-    color: #A1A3A6;
+    color: var(--softText);
 }
 
 /* Texto extra */
@@ -83,7 +83,7 @@ h8 {
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 0.06rem;
-    color: #A1A3A6;
+    color: var(--softText);
 }
 
 
@@ -656,5 +656,62 @@ img {
 }
 
 /*||||||||||||||||||||||||||||||||||||||| Albums ||||||||||||||||||||||||||||||*/
+
+.container-albums {
+    width: 90%;
+}
+
+.list-album {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.8rem;
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.9rem;
+    background-color: var(--background);
+    margin-bottom: 1.4rem;
+    box-shadow: 9px 9px 16px 0 rgba(163, 177, 198, 0.6), -9px -9px 16px 0 rgba(255, 255, 255, 0.5);
+}
+
+.list-album img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 10px;
+    margin-left: 0.46rem;
+}
+
+.Container-favs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 10px;
+    margin-left: 0.46rem;
+    perspective: 0.1px;
+    background: #6B73B5;
+}
+
+.Container-create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 10px;
+    margin-left: 0.46rem;
+    perspective: 0.1px;
+    background: #D2D6DA;
+}
+
+.container-text-album {
+    margin-top: 0.9rem;
+}
+
+.text-album {
+    margin-top: -7%;
+}
 
 /*||||||||||||||||||||||||||||||||||||||| List ||||||||||||||||||||||||||||||||*/
