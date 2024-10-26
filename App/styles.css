@@ -775,6 +775,10 @@ img {
     font-size: 1.2rem;
 }
 
+.list-search-delete {
+    margin-left: 11.8rem;
+}
+
 @keyframes keyframes-svg-filled {
     0% {
         transform: scale(0);
