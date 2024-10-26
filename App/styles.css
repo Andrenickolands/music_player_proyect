@@ -562,6 +562,10 @@ img {
     align-items: center;
 }
 
+.world {
+    width: 100%;
+}
+
 .player__title-options {
     margin-top: 3rem;
     margin-bottom: 1.4rem;
@@ -669,6 +673,7 @@ img {
     justify-content: end;
     align-items: end;
 }
+
 
 /*||||||||||||||||||||||||||||||||||||||| Albums ||||||||||||||||||||||||||||||*/
 
