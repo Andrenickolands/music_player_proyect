@@ -810,3 +810,9 @@ img {
         filter: brightness(1);
     }
 }
+
+/*||||||||||||||||||||||||||||||||||||||| LOGIN ||||||||||||||||||||||||||||||*/
+
+.container-logo {
+    margin-top: 6rem;
+}
