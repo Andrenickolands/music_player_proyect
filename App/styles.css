@@ -827,7 +827,6 @@ img {
 }
 
 .input {
-    margin-top: 1.2rem;
     width: 17rem;
     height: 3rem;
     border-radius: 0.875rem; /*14px*/
@@ -849,6 +848,9 @@ img {
     letter-spacing: 0.04rem;
     font-weight: 500;
     color: var(--text); 
+}
+.input-position {
+    margin-top: 1.2rem;
 }
 
 .btn {
@@ -893,3 +895,22 @@ img {
 a {
     text-decoration: none;
 }
+
+/*||||||||||||||||||||||||||||||||||||||| REGISTRATE ||||||||||||||||||||||||||||||*/
+
+.container-regis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-position2 {
+    margin-top: 1.5rem;
+}
+
+.regis_title {
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+}
+
