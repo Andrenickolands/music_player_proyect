@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,23 +17,27 @@
     <script src="scripts.js"></script>
     <title>Album</title>
 </head>
+
 <body>
     <div class="container">
         <div class="fondo fondoDesign">
             <div class="container-logo">
                 <img src="../../assets/logo/logoExplorify.svg" alt="logoExplorify">
             </div>
-
             <div class="container-login">
-                <p>Correo <input type="text" placeholder="Ingrese su email" name="email"></p>
-                <p>Contraseña <input type="text" placeholder="Ingrese su contraseña"name="password"></p>
-                <button type="submit" (click)="signIn()" class="btn btn-primary">Iniciar sesión</button>
-                <a href="restore-password.html"><h2 class="PasswordReset">Olvide mi contraseña</h2></a>
-                
-                <button type="submit" (click)="signUp()" class="btn btn-secundary">Regístrate</button>
+                <input class="input" type="text" placeholder="Ingresa tu email" name="email">
+                <input class="input" type="text" placeholder="Ingresa tu contraseña" name="password">
+                <button type="submit" (click)="signIn()" class="btn btn-primary btn-position">Iniciar sesión</button>
+                <a href="restore-password.html">
+                    <h4 class="PasswordReset">Olvide mi contraseña</h4>
+                </a>
+                <svg width="270" height="4" viewBox="0 0 270 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L268 1.99998" stroke="#BFC5C8" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <button type="submit" (click)="signUp()" class="btn btn-primary btn-position-2">Regístrate</button>
             </div>
         </div>
     </div>
-    
 </body>
+
 </html>
