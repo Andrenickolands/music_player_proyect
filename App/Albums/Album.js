@@ -7,8 +7,13 @@ const menu = document.querySelector("#menu");
 const search = document.querySelector("#search");
 const exploreMap = document.querySelector("#exploreMap");
 
+//DESPLEGABLE
+const desplegableMenu = document.querySelector("#desplegable-menu");
+const deslizadorMenu = document.querySelector("#deslizador-menu");
+
 menu.addEventListener("click", () => {
     audio.play();
+    desplegableMenu.classList.add("visible");
 })
 
 search.addEventListener("click", () => {
@@ -17,4 +22,8 @@ search.addEventListener("click", () => {
 
 exploreMap.addEventListener("click", () => {
     audio.play();
+})
+
+deslizadorMenu.addEventListener("click", () => {
+    desplegableMenu.classList.remove("visible");
 })

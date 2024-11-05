@@ -2,13 +2,13 @@
 const audioInput = new Audio('../../assets/audio/click__input.mp3');
 const audio = new Audio('../../assets/audio/click.mp3');
 
-//BOTONES options-album
+//BOTONES
 const back = document.querySelector("#back");
 const search = document.querySelector("#search");
 const options = document.querySelector("#options");
 const optionsAlbum = document.querySelector("#options-album");
 
-//DESPLEGABLE desplegable-album
+//DESPLEGABLE
 const desplegableAlbum = document.querySelector("#desplegable-album");
 const deslizadorAlbum = document.querySelector("#deslizador-album");
 const desplegable = document.querySelector("#desplegable");
