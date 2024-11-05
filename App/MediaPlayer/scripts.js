@@ -27,7 +27,7 @@ search.addEventListener("click", () => {
 
 options.addEventListener("click", () => {
   audio.play();
-  desplegable.add("visible");
+  desplegable.classList.add("visible");
 })
 
 backward.addEventListener("click", () => {
@@ -44,5 +44,5 @@ forward.addEventListener("click", () => {
 })
 
 deslizador.addEventListener("click", () => {
-  desplegable.remove("visible");
+  desplegable.classList.remove("visible");
 })
