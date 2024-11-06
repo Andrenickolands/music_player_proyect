@@ -36,10 +36,17 @@ backward.addEventListener("click", () => {
   audio.play();
 })
 
-playPause.addEventListener("canplaythrough", () => {
+playPause.addEventListener("click", () => {
   audioPlay.play();
-  music.play();
+  setTimeout(0.1);
+  reproducirMusica();
 })
+
+function reproducirMusica() {
+  playPause.addEventListener("canplaythrough", () => {
+    music.play();
+  });
+}
 
 forward.addEventListener("click", () => {
   audio.play();
