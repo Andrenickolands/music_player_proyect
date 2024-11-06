@@ -5,11 +5,14 @@ const audio = new Audio('../../../assets/audio/click.mp3');
 //BOTONES
 const back = document.querySelector("#back");
 const search = document.querySelector("#search");
-const options = document.querySelector("#options");
 
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable-explore");
 const deslizador = document.querySelector("#deslizador");
+
+let isResizing = false;
+let startY;
+let startHeight;
 
 back.addEventListener("click", () => {
   audio.play();
@@ -21,11 +24,25 @@ search.addEventListener("click", () => {
   window.location.href = "../Search/Search.html";
 })
 
-options.addEventListener("click", () => {
-  audio.play();
-  desplegable.classList.add("visible");
+deslizador.addEventListener("click", () => {
+
 })
 
-deslizador.addEventListener("click", () => {
-  desplegable.classList.remove("visible");
-})
+////////RESIZEZ////////
+
+deslizador.addEventListener('mousedown', (e) => {
+  isResizing = true;
+  startY = e.clientY;
+  startHeight = desplegable.clientHeight;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isResizing) return;
+  const dy = e.clientY - startY - startHeight;
+  desplegable.style.height = Math.max(startHeight + dy, 16) + '%';
+  desplegable.style.height = Math.min(startHeight + dy, 95) + '%';
+});
+
+document.addEventListener('mouseup', () => {
+  isResizing = false;
+});
