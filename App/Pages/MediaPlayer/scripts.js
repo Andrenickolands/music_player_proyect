@@ -1,7 +1,7 @@
 //SONIDO
-const audioInput = new Audio('../../assets/audio/click__input.mp3');
-const audioPlay = new Audio('../../assets/audio/click__play.mp3');
-const audio = new Audio('../../assets/audio/click.mp3');
+const audioInput = new Audio('../../../assets/audio/click__input.mp3');
+const audioPlay = new Audio('../../../assets/audio/click__play.mp3');
+const audio = new Audio('../../../assets/audio/click.mp3');
 const music = new Audio('AUDIO');
 
 //BOTONES
@@ -19,10 +19,12 @@ const deslizador = document.querySelector("#deslizador");
 
 back.addEventListener("click", () => {
   audio.play();
+  window.history.back();
 })
 
 search.addEventListener("click", () => {
   audioInput.play();
+  window.location.href = "../Search/Search.html";
 })
 
 options.addEventListener("click", () => {
