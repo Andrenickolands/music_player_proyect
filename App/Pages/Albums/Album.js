@@ -14,6 +14,9 @@ const album = document.querySelector("#album");
 const desplegableMenu = document.querySelector("#desplegable-menu");
 const deslizadorMenu = document.querySelector("#deslizador-menu");
 
+//ITEMS
+const logOut = document.querySelector("#logOut");
+
 menu.addEventListener("click", () => {
     audio.play();
     desplegableMenu.classList.add("visible");
@@ -35,4 +38,8 @@ deslizadorMenu.addEventListener("click", () => {
 
 album.addEventListener("click", () => {
     window.location.href = "../List/List.html";
+})
+
+logOut.addEventListener("click", () => {
+    window.location.href = "../Login/login.html";
 })

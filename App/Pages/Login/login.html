@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="../../styles.css">
-    <title>Album</title>
+    <title>login</title>
 </head>
 
 <body>
@@ -24,19 +24,21 @@
                 <img src="../../../assets/logo/logoExplorify.svg" alt="logoExplorify">
             </div>
             <div class="container-login">
-                <input class="input input-position" type="text" placeholder="Ingresa tu email" name="email">
-                <input class="input input-position" type="text" placeholder="Ingresa tu contraseña" name="password">
-                <button type="submit" (click)="signIn()" class="btn btn-primary btn-position">Iniciar sesión</button>
-                <a href="restore-password.html">
+                <input class="input input-position" type="email" placeholder="Ingresa tu email" name="email" id="email">
+                <input class="input input-position" type="password" placeholder="Ingresa tu contraseña" name="password" id="password">
+                <button type="submit" class="btn btn-primary btn-position" id="signIn">Iniciar sesión</button>
+                <a href="#">
                     <h4 class="PasswordReset">Olvide mi contraseña</h4>
                 </a>
                 <svg width="270" height="4" viewBox="0 0 270 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 2L268 1.99998" stroke="#BFC5C8" stroke-width="4" stroke-linecap="round"/>
                 </svg>
-                <button type="submit" (click)="signUp()" class="btn btn-primary btn-position-2">Regístrate</button>
+                <button type="submit" class="btn btn-primary btn-position-2" id="signUp">Regístrate</button>
             </div>
         </div>
     </div>
+
+    <script src="login.js"></script>
 </body>
 
 </html>
