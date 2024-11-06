@@ -595,7 +595,7 @@ img {
     background-color: var(--background);
 }
 
-.explore {
+.deslizador.exploreDeslizador {
     cursor: ns-resize;
 }
 
