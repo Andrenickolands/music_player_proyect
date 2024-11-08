@@ -288,7 +288,7 @@ img {
     align-items: center;
 }
 
-/* ////////// icono heart ///////// */
+/* ////////// heart icon  ///////// */
 .heart-container {
     width: 100%;
     width: 1.75rem;
@@ -406,6 +406,8 @@ img {
 /* ////////////////////////// barra de carga //////////////////////////// */
 /* posición y forma */
 .player__level {
+    appearance: none;
+    -webkit-appearance: none;
     width: 100%;
     height: 0.4rem;
     border-radius: 1rem;
@@ -414,33 +416,27 @@ img {
     border: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
-
-    position: relative;
     cursor: pointer;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+}
+
+/* barra de progreso  */
+.player__level #progress {
+    background-color: var(--color);
+    width: 0%;
+    height: 100%;
 }
 
 /* forma circulo */
 .player__level::-webkit-slider-thumb {
-    -webkit-appearance: none;
     appearance: none;
-    /*14px*/
+    -webkit-appearance: none;
     width: 1rem;
-    /*14px*/
     height: 1rem;
     border-radius: 100%;
     background-color: var(--color);
     cursor: pointer;
 }
+
 
 /* Oculta el player basico */
 .player__audio {
