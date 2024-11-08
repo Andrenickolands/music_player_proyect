@@ -406,7 +406,6 @@ img {
 /* ////////////////////////// barra de carga //////////////////////////// */
 /* posición y forma */
 .player__level {
-    -webkit-appearance: none;
     width: 100%;
     height: 0.4rem;
     border-radius: 1rem;
@@ -760,7 +759,7 @@ img {
     width: 3.2rem;
     height: 3.2rem;
     /*10px*/
-    border-radius: 0.625rem; 
+    border-radius: 0.625rem;
     margin-left: 0.46rem;
     perspective: 0.1px;
     background: #D2D6DA;

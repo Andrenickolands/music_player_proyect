@@ -24,10 +24,6 @@ search.addEventListener("click", () => {
   window.location.href = "../Search/Search.html";
 })
 
-deslizador.addEventListener("click", () => {
-
-})
-
 ////////RESIZEZ////////
 
 deslizador.addEventListener('mousedown', (e) => {
