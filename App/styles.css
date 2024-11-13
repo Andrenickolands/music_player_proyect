@@ -715,7 +715,7 @@ img {
 /*||||||||||||||||||||||||||||||||||||||| Albums ||||||||||||||||||||||||||||||*/
 
 .container-albums {
-    width: 50%;
+    width: 90%;
 }
 
 .list-album {
@@ -771,12 +771,13 @@ img {
     width: 50%;
 }
 
-.text-album {
-    width: 100%;
+.text-album-list {
+    margin-top: -2%;
 }
 
-.text-album.h2 {
+.text-album {
     white-space: nowrap;
+    width: 100%;
 }
 
 /*||||||||||||||||||||||||||||||||||||||| List ||||||||||||||||||||||||||||||||*/
