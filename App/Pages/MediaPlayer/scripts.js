@@ -9,8 +9,8 @@ const songName = document.querySelector("#songName");
 
 const songs = [
   {
-    src: '../../../assets/audio/song2.mp3',
-    song: 'Canción 1',
+    src: '../../../assets/audio/song1.mp3',
+    name: 'Canción 1',
     nameSong: 'Lithium',
     artist: 'Nirvana',
     time: 'Nirvana',
@@ -18,16 +18,16 @@ const songs = [
     image: '../../../assets/img/Portada_nirvana.jpg'
   },
   {
-    src: '../../../assets/audio/song3.mp3',
-    song: 'Canción 2',
+    src: '../../../assets/audio/song2.mp3',
+    name: 'Canción 2',
     nameSong: 'SORRY 4 THAT MUCH',
     artist: 'FERXXO',
     timeSong: '3:27',
     image: '../../../assets/img/feid.jpg'
   },
   {
-    src: '../../../assets/audio/song1.mp3',
-    song: 'Canción 3',
+    src: '../../../assets/audio/song3.mp3',
+    name: 'Canción 3',
     nameSong: 'Soltera',
     artist: 'Blessd',
     timeSong: '2:22',
