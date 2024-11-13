@@ -39,21 +39,19 @@ Instrucciones de uso:
 
 Este es un proyecto que sirve como muestra de habilidades en desarrollo web, interfaces de usuario y estructuración de un proyecto con documentación
 
-Ejemplo de uso:
-
-[Ejemplo de cómo usar el proyecto]
 
 Documentación:
 
-[Enlace a la documentación del proyecto]
+[[Enlace a la documentación del proyecto]](https://docs.google.com/document/d/1eZ7PW5bEwED5mI4VDxV8qzMiiFvFt8D5hN2o4bKIY4Y/edit?tab=t.0)
 
 Pruebas:
 
 [Descripción de las pruebas realizadas]
 
-Contribuciones:
+Contribuciones por:
 
-[Información sobre cómo contribuir al proyecto]
+David Vera (https://github.com/DaveTTo98)
+Paula Ramirez (https://github.com/Paulandreaa)
 
 ---
 
