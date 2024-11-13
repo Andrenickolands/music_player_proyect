@@ -13,6 +13,7 @@ const songs = [
     name: 'Canción 1',
     nameSong: 'Lithium',
     artist: 'Nirvana',
+    itsFav: true,
     timeSong: '4:17',
     image: '../../../assets/img/Portada_nirvana.jpg'
   },
@@ -21,6 +22,7 @@ const songs = [
     name: 'Canción 2',
     nameSong: 'SORRY 4 THAT MUCH',
     artist: 'FERXXO',
+    itsFav: true,
     timeSong: '3:27',
     image: '../../../assets/img/feid.jpg'
   },
@@ -29,6 +31,7 @@ const songs = [
     name: 'Canción 3',
     nameSong: 'Soltera',
     artist: 'Blessd',
+    itsFav: true,
     timeSong: '2:22',
     image: '../../../assets/img/blessd.jpg'
   }
@@ -54,6 +57,8 @@ const pause = document.querySelector("#pause");
 const play = document.querySelector("#play");
 const forward = document.querySelector("#forward");
 
+//ICONOS
+const heart = document.querySelector("#Give-It-An-Id");
 
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
@@ -85,6 +90,7 @@ backward.addEventListener("click", () => {
   image.src = prevSongData.image;
   nameSong.textContent  = prevSongData.nameSong;
   artist.textContent  = prevSongData.artist;
+  heart.checked = prevSongData.itsFav;
   timeSong.textContent  = prevSongData.timeSong;
   music.play();
 
@@ -118,6 +124,7 @@ forward.addEventListener("click", () => {
   image.src = nextSongData.image;
   nameSong.textContent = nextSongData.nameSong;
   artist.textContent = nextSongData.artist;
+  heart.checked = nextSongData.itsFav;
   timeSong.textContent = nextSongData.timeSong;
   music.play();
 
