@@ -13,7 +13,6 @@ const songs = [
     name: 'Canción 1',
     nameSong: 'Lithium',
     artist: 'Nirvana',
-    time: 'Nirvana',
     timeSong: '4:17',
     image: '../../../assets/img/Portada_nirvana.jpg'
   },
