@@ -8,6 +8,7 @@ const search = document.querySelector("#search");
 const exploreMap = document.querySelector("#exploreMap");
 
 //ALBUM
+const listFav = document.querySelector("#listFav");
 const album = document.querySelector("#album");
 
 //DESPLEGABLE
@@ -38,6 +39,10 @@ deslizadorMenu.addEventListener("click", () => {
 
 album.addEventListener("click", () => {
     window.location.href = "../List/List.html";
+})
+
+listFav.addEventListener("click", () => {
+    window.location.href = "../List/ListFav.html";
 })
 
 logOut.addEventListener("click", () => {

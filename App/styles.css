@@ -48,6 +48,7 @@ h2 {
 h3 {
     /*14px*/
     font-size: 0.875rem;
+
     letter-spacing: 0.06rem;
     font-style: medium;
     color: var(--text);
@@ -767,7 +768,8 @@ img {
 }
 
 .container-text-album {
-    margin-top: 0.9rem;
+    margin-top: 3%;
+    width: 50%;
 }
 
 .text-album {
@@ -777,13 +779,12 @@ img {
 /*||||||||||||||||||||||||||||||||||||||| List ||||||||||||||||||||||||||||||||*/
 
 .text-list {
-    margin-top: -12%;
+    margin-top: -4%;
     display: flex;
     color: #888888;
 }
 
 .container-list-icons {
-    margin-left: 8rem;
     display: flex;
     flex-direction: row;
     gap: 3rem;
