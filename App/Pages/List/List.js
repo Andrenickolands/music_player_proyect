@@ -10,6 +10,8 @@ const optionsAlbum = document.querySelector("#options-album");
 
 //SONG
 const song = document.querySelector("#song-item");
+const song2 = document.querySelector("#song2-item");
+const song3 = document.querySelector("#song3-item");
 
 //DESPLEGABLE
 const desplegableAlbum = document.querySelector("#desplegable-album");
@@ -48,5 +50,11 @@ deslizador.addEventListener("click", () => {
 
 song.addEventListener("click", () => {
     window.location.href = "../MediaPlayer/player.html";
+})
+song2.addEventListener("click", () => {
+    window.location.href = "../MediaPlayer/player2.html";
+})
+song3.addEventListener("click", () => {
+    window.location.href = "../MediaPlayer/player3.html";
 })
 
