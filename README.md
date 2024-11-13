@@ -1,6 +1,6 @@
 README
 
-Nombre del proyecto: music_player_proyect
+Nombre del proyecto: Explorify player music
 
 Descripción: Reproductor de música
 
