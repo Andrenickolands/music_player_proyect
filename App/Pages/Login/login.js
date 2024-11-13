@@ -1,15 +1,13 @@
-//INPUTS
-const email = document.querySelector("#email");  
-const password = document.querySelector("#password");  
+// INPUTS
+const emailInput = document.querySelector("#email");  
+const passwordInput = document.querySelector("#password");  
 
-//BTNs
+// BTNs
 const signIn = document.querySelector("#signIn");  
 const signUp = document.querySelector("#signUp");  
 
-signIn.addEventListener("click", () => {
-    window.location.href = "../Albums/Album.html";
-})
-
+// Evento para el botón de Registro
 signUp.addEventListener("click", () => {
-    window.location.href = "Registrate/registrate.html";
-})
+    window.location.href = "Registrate/registrate.php";
+});
+

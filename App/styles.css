@@ -9,6 +9,11 @@
     --tonoLigero: #d7dbdd;
     --white: #FCFCFC;
 }
+.world-position {
+    position: absolute;
+    top: 20px; /* Ajusta esta posición según tu diseño */
+    left: 20px; /* Ajusta esta posición según tu diseño */
+}
 
 /*  */
 *,

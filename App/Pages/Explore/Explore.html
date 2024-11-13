@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https: //fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="../../styles.css">
@@ -34,8 +34,24 @@
             </div>
 
             <div class="world-position">
-                <canvas id="map" class="world"></canvas>
+                <script type="module">
+
+                    import define from "./index.js";
+                    import {Runtime, Library, Inspector} from "./runtime.js";
+                    
+                    
+                    </script>
             </div>
+            <div class="world-position" id="map-container">
+                <script type="module">
+                    import define from "./index.js";
+                    import {Runtime, Library, Inspector} from "./runtime.js";
+                    
+                    const runtime = new Runtime();
+                    const main = runtime.module(define, Inspector.into(document.querySelector("#map-container")));
+                </script>
+            </div>
+            
 
             <div class="desplegable-explore" id="desplegable-explore">
                 <div class="deslizador exploreDeslizador" id="deslizador">
@@ -132,7 +148,8 @@
         </div>
     </div>
 
-    <script src="Explore.js"></script>
+
+
 </body>
 
 </html>

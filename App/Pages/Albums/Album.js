@@ -41,5 +41,5 @@ album.addEventListener("click", () => {
 })
 
 logOut.addEventListener("click", () => {
-    window.location.href = "../Login/login.html";
+    window.location.href = "../Login/login.php";
 })
