@@ -39,12 +39,12 @@
             </div>
 
             <div class="player__album">
-                <img src="../../../assets/img/Portada_nirvana.jpg" alt="Album cover" class="player__img" />
+                <img src="../../../assets/img/Portada_nirvana.jpg" alt="Album cover" class="player__img" id="image" />
 
                 <div class="container-album">
                     <div class="text-album">
-                        <h2 class="player__song">Lithium</h2>
-                        <h4 class="player__artist">Nirvana</h4>
+                        <h2 class="player__song" id="nameSong">Lithium</h2>
+                        <h4 class="player__artist" id="artist">Nirvana</h4>
                     </div>
 
                     <div class="heart-container">
@@ -90,7 +90,7 @@
                         </div>
                     </div>
 
-                    <span class="finish time_ful">3:00</span>
+                    <span class="finish time_ful" id="timeSong">3:00</span>
                 </div>
 
                 <input id="progress" class="player__level" value="0" type="range">
@@ -106,9 +106,9 @@
                     <i class="fa-solid fa-backward backward-btn color-icon"></i>
                 </div>
 
-                <div class="player__btn player__btn--medium color__btn" id="play">
-                    <i class="fa-solid fa-play play-btn"></i>
-                    <i class="fa-solid fa-pause pause-btn hide__btn"></i>
+                <div class="player__btn player__btn--medium color__btn" id="playPause">
+                    <i class="fa-solid fa-play play-btn" id="play"></i>
+                    <i class="fa-solid fa-pause pause-btn hide__btn" id="pause"></i>
                 </div>
 
                 <div class="player__btn player__btn--medium" id="forward">

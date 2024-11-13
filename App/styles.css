@@ -48,7 +48,6 @@ h2 {
 h3 {
     /*14px*/
     font-size: 0.875rem;
-
     letter-spacing: 0.06rem;
     font-style: medium;
     color: var(--text);
@@ -305,7 +304,7 @@ img {
     align-items: right;
     gap: .20rem;
     margin-top: -1rem;
-    margin-left: 12.2rem;
+    /*margin-left: 12.2rem; */
     cursor: pointer;
     transition: .3s;
     color: var(--color);
@@ -716,7 +715,7 @@ img {
 /*||||||||||||||||||||||||||||||||||||||| Albums ||||||||||||||||||||||||||||||*/
 
 .container-albums {
-    width: 90%;
+    width: 50%;
 }
 
 .list-album {
@@ -773,7 +772,11 @@ img {
 }
 
 .text-album {
-    margin-top: -2%;
+    width: 100%;
+}
+
+.text-album.h2 {
+    white-space: nowrap;
 }
 
 /*||||||||||||||||||||||||||||||||||||||| List ||||||||||||||||||||||||||||||||*/

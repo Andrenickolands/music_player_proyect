@@ -8,25 +8,40 @@ const songImage = document.querySelector("#songImage");
 const songName = document.querySelector("#songName");
 
 const songs = [
-  { 
+  {
     src: '../../../assets/audio/song2.mp3',
-    name: 'Canción 1',
-    image: 'path/to/image1.jpg' 
+    song: 'Canción 1',
+    nameSong: 'Lithium',
+    artist: 'Nirvana',
+    time: 'Nirvana',
+    timeSong: '4:17',
+    image: '../../../assets/img/Portada_nirvana.jpg'
   },
-  { 
+  {
     src: '../../../assets/audio/song3.mp3',
-    name: 'Canción 2',
-    image: 'path/to/image2.jpg'
+    song: 'Canción 2',
+    nameSong: 'SORRY 4 THAT MUCH',
+    artist: 'FERXXO',
+    timeSong: '3:27',
+    image: '../../../assets/img/feid.jpg'
   },
-  { 
+  {
     src: '../../../assets/audio/song1.mp3',
-    name: 'Canción 3',
-    image: 'path/to/image3.jpg'
+    song: 'Canción 3',
+    nameSong: 'Soltera',
+    artist: 'Blessd',
+    timeSong: '2:22',
+    image: '../../../assets/img/blessd.jpg'
   }
-
 ];
 
 let currentSongIndex = 0;
+
+//ITEMS
+const image = document.querySelector("#image");
+const nameSong = document.querySelector("#nameSong");
+const artist = document.querySelector("#artist");
+const timeSong = document.querySelector("#timeSong");
 
 //BOTONES
 const back = document.querySelector("#back");
@@ -34,8 +49,12 @@ const search = document.querySelector("#search");
 const options = document.querySelector("#options");
 
 const backward = document.querySelector("#backward");
-const playPause = document.querySelector("#play");
+const playPause = document.querySelector("#playPause");
+//pausePlay
+const pause = document.querySelector("#pause");
+const play = document.querySelector("#play");
 const forward = document.querySelector("#forward");
+
 
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
@@ -58,40 +77,53 @@ options.addEventListener("click", () => {
 
 backward.addEventListener("click", () => {
   audio.play();
-  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length; 
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
 
   const prevSongData = songs[currentSongIndex];
 
   music.pause();
-  music.src = prevSongData.src; 
-  music.play(); 
+  music.src = prevSongData.src;
+  image.src = prevSongData.image;
+  nameSong.textContent  = prevSongData.nameSong;
+  artist.textContent  = prevSongData.artist;
+  timeSong.textContent  = prevSongData.timeSong;
+  music.play();
 
-  playPause.textContent = "Pausar"; 
+  pause.classList.remove("hide__btn");
+  play.classList.add("hide__btn");
 });
 
 playPause.addEventListener("click", () => {
   audioPlay.play();
   if (music.paused) {
-    music.play(); 
-    playPause.textContent = "Pausar"; 
+    music.play();
+
+    pause.classList.remove("hide__btn");
+    play.classList.add("hide__btn");
   } else {
-    music.pause(); 
-    playPause.textContent = "Reproducir"; 
+    music.pause();
+
+    play.classList.remove("hide__btn");
+    pause.classList.add("hide__btn");
   }
 });
 
 forward.addEventListener("click", () => {
   audio.play();
-  currentSongIndex = (currentSongIndex + 1) % songs.length; 
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
 
   const nextSongData = songs[currentSongIndex];
 
   music.pause();
-  music.src = nextSongData.src; 
-  music.play(); 
+  music.src = nextSongData.src;
+  image.src = nextSongData.image;
+  nameSong.textContent = nextSongData.nameSong;
+  artist.textContent = nextSongData.artist;
+  timeSong.textContent = nextSongData.timeSong;
+  music.play();
 
- 
-  playPause.textContent = "Pausar"; 
+  pause.classList.remove("hide__btn");
+  play.classList.add("hide__btn");
 });
 
 deslizador.addEventListener("click", () => {
