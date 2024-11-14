@@ -60,6 +60,9 @@ const forward = document.querySelector("#forward");
 //ICONOS
 const heart = document.querySelector("#Give-It-An-Id");
 
+//BARRA DE REPRODUCIÓN
+const progress = document.querySelector("#progress");
+
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
 const deslizador = document.querySelector("#deslizador");
@@ -79,57 +82,73 @@ options.addEventListener("click", () => {
   desplegable.classList.add("visible");
 });
 
-backward.addEventListener("click", () => {
-  audio.play();
-  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+backward.addEventListener("click", backwardMusic);
+playPause.addEventListener("click", playPauseMusic);
+forward.addEventListener("click", forwardMusic);
 
-  const prevSongData = songs[currentSongIndex];
-
-  music.pause();
-  music.src = prevSongData.src;
-  image.src = prevSongData.image;
-  nameSong.textContent  = prevSongData.nameSong;
-  artist.textContent  = prevSongData.artist;
-  heart.checked = prevSongData.itsFav;
-  timeSong.textContent  = prevSongData.timeSong;
+function playMusic() {
   music.play();
-
   pause.classList.remove("hide__btn");
   play.classList.add("hide__btn");
-});
+}
 
-playPause.addEventListener("click", () => {
+function pauseMusic() {
+  music.pause();
+  play.classList.remove("hide__btn");
+  pause.classList.add("hide__btn");
+}
+
+function InfoSongUpdate(SongData) {
+  music.src = SongData.src;
+  image.src = SongData.image;
+  nameSong.textContent = SongData.nameSong;
+  artist.textContent = SongData.artist;
+  heart.checked = SongData.itsFav;
+  timeSong.textContent = SongData.timeSong;
+};
+
+function backwardMusic() {
+  audio.play();
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  const SongData = songs[currentSongIndex];
+  pauseMusic()
+  InfoSongUpdate(SongData)
+  playMusic()
+};
+
+function playPauseMusic() {
   audioPlay.play();
   if (music.paused) {
-    music.play();
-
-    pause.classList.remove("hide__btn");
-    play.classList.add("hide__btn");
+    playMusic()
   } else {
-    music.pause();
+    pauseMusic()
+  }
+};
 
-    play.classList.remove("hide__btn");
-    pause.classList.add("hide__btn");
+function forwardMusic() {
+  audio.play();
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
+  const SongData = songs[currentSongIndex];
+  pauseMusic()
+  InfoSongUpdate(SongData)
+  playMusic()
+};
+
+music.addEventListener("timeupdate", () => {
+  if (!music.paused) {
+    progress.value = music.currentTime;
   }
 });
 
-forward.addEventListener("click", () => {
-  audio.play();
-  currentSongIndex = (currentSongIndex + 1) % songs.length;
+progress.addEventListener("input", () => {
+  if (!music.paused) {
+    music.currentTime = progress.value;
+  }
+});
 
-  const nextSongData = songs[currentSongIndex];
-
-  music.pause();
-  music.src = nextSongData.src;
-  image.src = nextSongData.image;
-  nameSong.textContent = nextSongData.nameSong;
-  artist.textContent = nextSongData.artist;
-  heart.checked = nextSongData.itsFav;
-  timeSong.textContent = nextSongData.timeSong;
-  music.play();
-
-  pause.classList.remove("hide__btn");
-  play.classList.add("hide__btn");
+progress.addEventListener("change", () => {
+  music.currentTime = progress.value;
+  playMusic();
 });
 
 deslizador.addEventListener("click", () => {
