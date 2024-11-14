@@ -44,17 +44,6 @@ document.addEventListener('mouseup', () => {
   isResizing = false;
 });
 
-deslizador.addEventListener('mousedown', () => {
-  if (deslizador.style.height > "16%") {
-    deslizador.classList.remove("scroll-inactive");
-    deslizador.classList.add("scroll-active");
-  }
-  else {
-    deslizador.classList.remove("scroll-active");
-    deslizador.classList.add("scroll-inactive");
-  }
-});
-
 ////////WORLD////////
 //https://observablehq.com/@michael-keith/draggable-globe-in-d3@203
 function _1(md) {
