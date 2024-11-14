@@ -62,6 +62,7 @@ const heart = document.querySelector("#Give-It-An-Id");
 
 //BARRA DE REPRODUCIÓN
 const progress = document.querySelector("#progress");
+const progress2 = document.querySelector("#progress2");
 
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
@@ -143,18 +144,20 @@ music.addEventListener("timeupdate", () => {
   if (!music.paused) {
     progress.value = music.currentTime;
     const progressPercent = (music.currentTime / music.duration) * 100;
-    document.getElementById("progress2").style.width = progressPercent + "%";
+    progress2.style.width = progressPercent + "%";
   }
 });
 
 progress.addEventListener("input", () => {
   if (!music.paused) {
     music.currentTime = progress.value;
+    music.currentTime = progress2.value;
   }
 });
 
 progress.addEventListener("change", () => {
   music.currentTime = progress.value;
+  music.currentTime = progress2.value;
   playMusic();
 });
 
