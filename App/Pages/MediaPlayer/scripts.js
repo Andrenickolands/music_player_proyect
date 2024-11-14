@@ -105,38 +105,45 @@ function InfoSongUpdate(SongData) {
   artist.textContent = SongData.artist;
   heart.checked = SongData.itsFav;
   timeSong.textContent = SongData.timeSong;
-};
+}
 
 function backwardMusic() {
   audio.play();
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   const SongData = songs[currentSongIndex];
-  pauseMusic()
-  InfoSongUpdate(SongData)
-  playMusic()
-};
+  pauseMusic();
+  InfoSongUpdate(SongData);
+  playMusic();
+}
 
 function playPauseMusic() {
   audioPlay.play();
   if (music.paused) {
-    playMusic()
+    playMusic();
   } else {
-    pauseMusic()
+    pauseMusic();
   }
-};
+}
 
 function forwardMusic() {
   audio.play();
   currentSongIndex = (currentSongIndex + 1) % songs.length;
   const SongData = songs[currentSongIndex];
-  pauseMusic()
-  InfoSongUpdate(SongData)
-  playMusic()
-};
+  pauseMusic();
+  InfoSongUpdate(SongData);
+  playMusic();
+}
+
+music.addEventListener("loadedmetadata", () => {
+    progress.max = music.duration;
+    progress.value = music.currentTime;
+});
 
 music.addEventListener("timeupdate", () => {
   if (!music.paused) {
     progress.value = music.currentTime;
+    const progressPercent = (music.currentTime / music.duration) * 100;
+    document.getElementById("progress2").style.width = progressPercent + "%";
   }
 });
 

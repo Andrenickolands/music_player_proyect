@@ -425,10 +425,20 @@ img {
 }
 
 /* barra de progreso  */
-.player__level #progress {
-    background-color: var(--color);
+.player__level2 {
+    position: relative;
+    margin-top: -3.7%;
+    margin-left: 0.8%;
     width: 0%;
-    height: 100%;
+    height: 0.4rem;
+    border-radius: 1rem;
+    z-index: 2;
+    background-color: var(--color);
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* forma circulo */
