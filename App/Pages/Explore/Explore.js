@@ -45,13 +45,13 @@ document.addEventListener('mouseup', () => {
 });
 
 ////////WORLD////////
-https://observablehq.com/@michael-keith/draggable-globe-in-d3@203
+//https://observablehq.com/@michael-keith/draggable-globe-in-d3@203
 function _1(md){return(
   md``
   )}
   
   function _2(html){return(
-  html`<div id="map" style="width: 100%;"></div>`
+  html`<div id="map" style="width: 95%;"></div>`
   )}
   
   function _world_json(FileAttachment){return(
@@ -61,11 +61,11 @@ function _1(md){return(
   async function _4(d3,world_json)
   {
     let width = d3.select("#map").node().getBoundingClientRect().width
-    let height = 500
+    let height = 400
     const sensitivity = 75
   
     let projection = d3.geoOrthographic()
-      .scale(250)
+      .scale(180)
       .center([0, 0])
       .rotate([0,-30])
       .translate([width / 2, height / 2])
@@ -80,7 +80,7 @@ function _1(md){return(
       .attr("height", height)
   
     let globe = svg.append("circle")
-      .attr("fill", "#EEE")
+      .attr("fill", "#F5F5F5")
       .attr("stroke", "#000")
       .attr("stroke-width", "0.2")
       .attr("cx", width/2)
@@ -120,15 +120,11 @@ function _1(md){return(
       .enter().append("path")
       .attr("class", d => "country_" + d.properties.name.replace(" ","_"))
       .attr("d", path)
-      .attr("fill", "white")
-      .style('stroke', 'black')
+      .attr("fill", "#6B73B5")
+      .style('stroke', 'white')
       .style('stroke-width', 0.3)
       .style("opacity",0.8)
-  
-    //Optional rotate
-  
   }
-  
   
   function _d3(require){return(
   require("https://d3js.org/d3.v4.min.js")
