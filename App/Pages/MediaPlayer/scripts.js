@@ -2,7 +2,7 @@
 const audioInput = new Audio('../../../assets/audio/click__input.mp3');
 const audioPlay = new Audio('../../../assets/audio/click__play.mp3');
 const audio = new Audio('../../../assets/audio/click.mp3');
-const music = new Audio('../../../assets/audio/song1.mp3');
+const music = new Audio();
 
 const songImage = document.querySelector("#songImage");
 const songName = document.querySelector("#songName");
@@ -34,7 +34,8 @@ const songs = [
   }
 ];
 
-let currentSongIndex = 0;
+let currentSongIndex = localStorage.getItem('selectedSongIndex') || 0;
+currentSongIndex = parseInt(currentSongIndex, 10);
 
 //ITEMS
 const image = document.querySelector("#image");
@@ -45,6 +46,21 @@ const timeNow = document.querySelector(".time_now");
 const timeTotal = document.querySelector(".time_total");
 
 const progressBar = document.querySelector("#progress");
+
+// Cargar y reproducir la canción seleccionada
+const loadSong = (index) => {
+  const songData = songs[index];
+  music.src = songData.src;
+  image.src = songData.image;
+  nameSong.textContent = songData.nameSong;
+  artist.textContent = songData.artist;
+  heart.checked = songData.itsFav;
+  music.play();
+
+  // Actualiza el estado de los botones de reproducción y pausa
+  pause.classList.remove("hide__btn");
+  play.classList.add("hide__btn");
+};
 
 // Actualiza el tiempo total cuando la canción se carga
 music.addEventListener("loadedmetadata", () => {
@@ -87,10 +103,6 @@ const forward = document.querySelector("#forward");
 //ICONOS
 const heart = document.querySelector("#Give-It-An-Id");
 
-//BARRA DE REPRODUCIÓN
-const progress = document.querySelector("#progress");
-const progress2 = document.querySelector("#progress2");
-
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
 const deslizador = document.querySelector("#deslizador");
@@ -113,73 +125,31 @@ options.addEventListener("click", () => {
 backward.addEventListener("click", () => {
   audio.play();
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  loadSong(currentSongIndex);
+});
 
-  const prevSongData = songs[currentSongIndex];
-
-  music.pause();
-  music.src = prevSongData.src;
-  image.src = prevSongData.image;
-  nameSong.textContent  = prevSongData.nameSong;
-  artist.textContent  = prevSongData.artist;
-  heart.checked = prevSongData.itsFav;
-  timeSong.textContent  = prevSongData.timeSong;
-  music.play();
-  pause.classList.remove("hide__btn");
-  play.classList.add("hide__btn");
-}
-
-function pauseMusic() {
-  music.pause();
-  play.classList.remove("hide__btn");
-  pause.classList.add("hide__btn");
-}
-
-function InfoSongUpdate(SongData) {
-  music.src = SongData.src;
-  image.src = SongData.image;
-  nameSong.textContent = SongData.nameSong;
-  artist.textContent = SongData.artist;
-  heart.checked = SongData.itsFav;
-  timeSong.textContent = SongData.timeSong;
-}
-
-function backwardMusic() {
-  audio.play();
-  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-  const SongData = songs[currentSongIndex];
-  pauseMusic();
-  InfoSongUpdate(SongData);
-  playMusic();
-}
-
-function playPauseMusic() {
+playPause.addEventListener("click", () => {
   audioPlay.play();
   if (music.paused) {
-    playMusic();
+    music.play();
+    pause.classList.remove("hide__btn");
+    play.classList.add("hide__btn");
   } else {
-    pauseMusic();
+    music.pause();
+    play.classList.remove("hide__btn");
+    pause.classList.add("hide__btn");
   }
-}
+});
 
-function forwardMusic() {
+forward.addEventListener("click", () => {
   audio.play();
   currentSongIndex = (currentSongIndex + 1) % songs.length;
-
-  const nextSongData = songs[currentSongIndex];
-
-  music.pause();
-  music.src = nextSongData.src;
-  image.src = nextSongData.image;
-  nameSong.textContent = nextSongData.nameSong;
-  artist.textContent = nextSongData.artist;
-  heart.checked = nextSongData.itsFav;
-  timeSong.textContent = nextSongData.timeSong;
-  music.play();
-
-  pause.classList.remove("hide__btn");
-  play.classList.add("hide__btn");
+  loadSong(currentSongIndex);
 });
 
 deslizador.addEventListener("click", () => {
   desplegable.classList.remove("visible");
 });
+
+// Cargar la canción seleccionada al iniciar la página
+loadSong(currentSongIndex);

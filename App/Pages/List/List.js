@@ -49,12 +49,14 @@ deslizador.addEventListener("click", () => {
 })
 
 song.addEventListener("click", () => {
+    localStorage.setItem('selectedSongIndex', 0);
     window.location.href = "../MediaPlayer/player.html";
 })
 song2.addEventListener("click", () => {
+    localStorage.setItem('selectedSongIndex', 1);
     window.location.href = "../MediaPlayer/player2.html";
 })
 song3.addEventListener("click", () => {
+    localStorage.setItem('selectedSongIndex', 2);
     window.location.href = "../MediaPlayer/player3.html";
 })
-
