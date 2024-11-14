@@ -425,10 +425,20 @@ img {
 }
 
 /* barra de progreso  */
-.player__level #progress {
-    background-color: var(--color);
+.player__level2 {
+    position: relative;
+    margin-top: -3.7%;
+    margin-left: 0.8%;
     width: 0%;
-    height: 100%;
+    height: 0.4rem;
+    border-radius: 1rem;
+    z-index: 2;
+    background-color: var(--color);
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* forma circulo */
@@ -641,17 +651,27 @@ img {
     z-index: 1;
     /*16px*/
     border-radius: 1rem;
-    background: linear-gradient(transparent 0%, rgba(42, 42, 42, 0.52) 48%, rgba(0, 0, 0, 0.60) 66%, rgba(0, 0, 0, 0.64) 76%);
+   background: linear-gradient(transparent 2%, rgba(42, 42, 42, 0.52) 52%, rgba(0, 0, 0, 0.60) 66%, rgba(0, 0, 0, 0.64) 80%);
     opacity: 0.7;
 }
 
 .tarjet-text {
     position: absolute;
-    left: 0.6rem;
+    left: 0.5rem;
     bottom: 0.8rem;
     text-align: left;
     z-index: 1;
-    max-width: 84%;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipssis;
+}
+
+.tarjet-text h6 {
+    font-size: 0.625rem;
+}
+
+.tarjet-text h7 {
+    font-size: 0.525rem;
 }
 
 .tarjet-text-position {

@@ -87,6 +87,10 @@ const forward = document.querySelector("#forward");
 //ICONOS
 const heart = document.querySelector("#Give-It-An-Id");
 
+//BARRA DE REPRODUCIÓN
+const progress = document.querySelector("#progress");
+const progress2 = document.querySelector("#progress2");
+
 //DESPLEGABLE
 const desplegable = document.querySelector("#desplegable");
 const deslizador = document.querySelector("#deslizador");
@@ -118,28 +122,46 @@ backward.addEventListener("click", () => {
   nameSong.textContent  = prevSongData.nameSong;
   artist.textContent  = prevSongData.artist;
   heart.checked = prevSongData.itsFav;
+  timeSong.textContent  = prevSongData.timeSong;
   music.play();
-
   pause.classList.remove("hide__btn");
   play.classList.add("hide__btn");
-});
+}
 
-playPause.addEventListener("click", () => {
+function pauseMusic() {
+  music.pause();
+  play.classList.remove("hide__btn");
+  pause.classList.add("hide__btn");
+}
+
+function InfoSongUpdate(SongData) {
+  music.src = SongData.src;
+  image.src = SongData.image;
+  nameSong.textContent = SongData.nameSong;
+  artist.textContent = SongData.artist;
+  heart.checked = SongData.itsFav;
+  timeSong.textContent = SongData.timeSong;
+}
+
+function backwardMusic() {
+  audio.play();
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  const SongData = songs[currentSongIndex];
+  pauseMusic();
+  InfoSongUpdate(SongData);
+  playMusic();
+}
+
+function playPauseMusic() {
   audioPlay.play();
   if (music.paused) {
-    music.play();
-
-    pause.classList.remove("hide__btn");
-    play.classList.add("hide__btn");
+    playMusic();
   } else {
-    music.pause();
-
-    play.classList.remove("hide__btn");
-    pause.classList.add("hide__btn");
+    pauseMusic();
   }
-});
+}
 
-forward.addEventListener("click", () => {
+function forwardMusic() {
   audio.play();
   currentSongIndex = (currentSongIndex + 1) % songs.length;
 
@@ -151,14 +173,8 @@ forward.addEventListener("click", () => {
   nameSong.textContent = nextSongData.nameSong;
   artist.textContent = nextSongData.artist;
   heart.checked = nextSongData.itsFav;
+  timeSong.textContent = nextSongData.timeSong;
   music.play();
-
-  // Actualiza el tiempo total cuando la nueva canción se carga
-  music.addEventListener("loadedmetadata", () => {
-    const minutes = Math.floor(music.duration / 60);
-    const seconds = Math.floor(music.duration % 60);
-    timeTotal.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  });
 
   pause.classList.remove("hide__btn");
   play.classList.add("hide__btn");
