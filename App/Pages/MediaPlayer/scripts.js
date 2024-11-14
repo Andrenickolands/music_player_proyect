@@ -14,7 +14,6 @@ const songs = [
     nameSong: 'Lithium',
     artist: 'Nirvana',
     itsFav: true,
-    timeSong: '4:17',
     image: '../../../assets/img/Portada_nirvana.jpg'
   },
   {
@@ -23,7 +22,6 @@ const songs = [
     nameSong: 'SORRY 4 THAT MUCH',
     artist: 'FERXXO',
     itsFav: true,
-    timeSong: '3:27',
     image: '../../../assets/img/feid.jpg'
   },
   {
@@ -32,7 +30,6 @@ const songs = [
     nameSong: 'Soltera',
     artist: 'Blessd',
     itsFav: true,
-    timeSong: '2:22',
     image: '../../../assets/img/blessd.jpg'
   }
 ];
@@ -44,6 +41,36 @@ const image = document.querySelector("#image");
 const nameSong = document.querySelector("#nameSong");
 const artist = document.querySelector("#artist");
 const timeSong = document.querySelector("#timeSong");
+const timeNow = document.querySelector(".time_now");
+const timeTotal = document.querySelector(".time_total");
+
+const progressBar = document.querySelector("#progress");
+
+// Actualiza el tiempo total cuando la canción se carga
+music.addEventListener("loadedmetadata", () => {
+  const minutes = Math.floor(music.duration / 60);
+  const seconds = Math.floor(music.duration % 60);
+  timeTotal.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+});
+
+music.addEventListener("timeupdate", () => {
+  const progressPercent = (music.currentTime / music.duration) * 100;
+  progressBar.value = progressPercent;
+  progressBar.style.background = `linear-gradient(to right, #6B73B5 ${progressPercent}%, #E0E5EC ${progressPercent}%)`;
+
+  // Actualiza el tiempo transcurrido
+  const minutes = Math.floor(music.currentTime / 60);
+  const seconds = Math.floor(music.currentTime % 60);
+  timeNow.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+});
+
+// Permite que el usuario cambie la posición de la canción al mover la barra de progreso
+progressBar.addEventListener("input", () => {
+  const newTime = (progressBar.value / 100) * music.duration;
+  music.currentTime = newTime;
+  const progressPercent = progressBar.value;
+  progressBar.style.background = `linear-gradient(to right, #6B73B5 ${progressPercent}%, #E0E5EC ${progressPercent}%)`;
+});
 
 //BOTONES
 const back = document.querySelector("#back");
@@ -91,7 +118,6 @@ backward.addEventListener("click", () => {
   nameSong.textContent  = prevSongData.nameSong;
   artist.textContent  = prevSongData.artist;
   heart.checked = prevSongData.itsFav;
-  timeSong.textContent  = prevSongData.timeSong;
   music.play();
 
   pause.classList.remove("hide__btn");
@@ -125,8 +151,14 @@ forward.addEventListener("click", () => {
   nameSong.textContent = nextSongData.nameSong;
   artist.textContent = nextSongData.artist;
   heart.checked = nextSongData.itsFav;
-  timeSong.textContent = nextSongData.timeSong;
   music.play();
+
+  // Actualiza el tiempo total cuando la nueva canción se carga
+  music.addEventListener("loadedmetadata", () => {
+    const minutes = Math.floor(music.duration / 60);
+    const seconds = Math.floor(music.duration % 60);
+    timeTotal.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  });
 
   pause.classList.remove("hide__btn");
   play.classList.add("hide__btn");

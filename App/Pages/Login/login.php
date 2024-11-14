@@ -34,10 +34,8 @@
             </div>
             <div class="container-login">
                 <form action="logica.php" method="post">
-                    <label for="email">Username:</label>
                     <input class="input input-position" placeholder="Ingresa tu email" type="text" id="email"
                         name="email"><br><br>
-                    <label for="password">Password:</label>
                     <input class="input input-position" type="password" placeholder="Ingresa tu contraseña"
                         id="password" name="password"><br><br>
                     <input type="submit" class="btn btn-primary btn-position" id="signIn" value="iniciar sesion">
